@@ -19,7 +19,6 @@ you fill in new string with that key
 
 
 import random as r
-from collections import Counter
 
 # def draw_board(solution):
 # 	for letter in solution:
