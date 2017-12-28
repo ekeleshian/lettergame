@@ -20,9 +20,6 @@ you fill in new string with that key
 
 import random as r
 
-# def draw_board(solution):
-# 	for letter in solution:
-# 		print('__', end =' ')
 def secret_dict(string):
 	secret_dict = {}
 	for idx, value in enumerate(string):
