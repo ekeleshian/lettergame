@@ -38,14 +38,14 @@ def letter_game():
 	while num_of_tries > 0:
 		finished_game_check = 0
 
-		guess_char = input("Take a guess: ")
+		guess_char = input("\nTake a guess: \n")
 
 		if guess_char not in return_secret_dict:
 			num_of_tries -= 1
 			guessed_letters.append(guess_char)
 			print(" {} is not found in the word. You have {} tries left.".format(guess_char, num_of_tries))
 		if guess_char in return_secret_dict:
-			if guess_char in generating_board:
+			if guess_char in guessed_letters:
 				print("You have already guessed {}. Try again".format(guess_char))
 			else:
 				num_of_tries -= 1
