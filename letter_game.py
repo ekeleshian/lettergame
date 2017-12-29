@@ -1,23 +1,3 @@
-#make a list of words
-# pick a random word
-# draw spaces
-#take a guess
-#draw guessed letters and strikes
-#print out win/lose
-
-"""
-One idea, make a dictionary where 
-keys are the unique characters of the string 
-and values are lists of integers where integer represents 
-all the indexes of where that key (the letter) appears in string. 
-Expect most values of keys to be arrays of length 1. 
-When user gives a character input, check if that key 
-exists in dictionary, if so, 
-then the value of the key (its a list of indexes) is where 
-you fill in new string with that key
-"""
-
-
 import random as r
 
 def secret_dict(string):
@@ -69,6 +49,7 @@ def letter_game():
 				print("You have already guessed {}. Try again".format(guess_char))
 			else:
 				num_of_tries -= 1
+				print("\n \n Nice!! You got one! You have {} attempts left. \n".format(num_of_tries))
 				guessed_letters.append(guess_char)
 				list_idx = return_secret_dict[guess_char]
 				for i in list_idx:
@@ -78,14 +59,13 @@ def letter_game():
 			if element != "__":
 				finished_game_check += 1
 			if finished_game_check == len(generating_board):
-				print('game over!')
 				num_of_tries = 0
-				break
+				
 
-		print("The guessed letters: {}".format(guessed_letters))
-		print(generating_board)
-
-	play_again = input("do you want to play again? Y/N ")
+		print("The guessed letters: {}. \n \n ".format(guessed_letters))
+		print(generating_board, '\n \n')
+	print('Game over! The word was {}.'.format(secret_word))
+	play_again = input("Do you want to play again? Y/N ")
 	if play_again.lower() != 'n':
 		letter_game()
 	else:
@@ -93,9 +73,3 @@ def letter_game():
 		num_of_tries = 0
 
 letter_game()
-
-
-
-
-
-
